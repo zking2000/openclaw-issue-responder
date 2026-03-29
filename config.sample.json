@@ -1,0 +1,41 @@
+{
+  "runtime": {
+    "http_timeout_seconds": 20,
+    "poll_interval_seconds": 300,
+    "state_path": "state/runtime.json"
+  },
+  "github": {
+    "api_base": "https://api.github.com",
+    "token": "",
+    "token_env": "GITHUB_TOKEN",
+    "user_agent": "openclaw-issue-responder/1.0"
+  },
+  "openclaw": {
+    "bin": "openclaw",
+    "thinking": "minimal",
+    "timeout_seconds": 120
+  },
+  "repositories": [
+    {
+      "id": "repo-1",
+      "enabled": true,
+      "repo": "owner/repo",
+      "workspace_path": "/path/to/local/repo",
+      "openclaw_agent_id": "main",
+      "language": "zh-CN",
+      "auto_publish": false,
+      "labels_allowlist": [],
+      "context_files": [
+        "README.md"
+      ],
+      "issue_fetch_limit": 20,
+      "history_limit": 12,
+      "max_context_chars_per_file": 12000,
+      "max_reply_chars": 2200,
+      "skip_authors": [
+        "github-actions[bot]",
+        "openclaw-bot"
+      ]
+    }
+  ]
+}
